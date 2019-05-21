@@ -1,0 +1,283 @@
+@font-face {
+  font-family: "Druk Wide Web Italic";
+  src: url("fonts/DrukWideWeb-MediumItalic/DrukWideWeb-MediumItalic.eot");
+  src: url("fonts/DrukWideWeb-MediumItalic/DrukWideWeb-MediumItalic.eot?#iefix") format("embedded-opentype"),
+    url("fonts/DrukWideWeb-MediumItalic/DrukWideWeb-MediumItalic.woff2") format("woff2"),
+    url("fonts/DrukWideWeb-MediumItalic/DrukWideWeb-MediumItalic.woff") format("woff"),
+    url("fonts/DrukWideWeb-MediumItalic/DrukWideWeb-MediumItalic.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'Druk Wide Web Heavy';
+    src: url('fonts/DrukWideWeb-Heavy/DrukWideWeb-Heavy.eot');
+    src: url('fonts/DrukWideWeb-Heavy/DrukWideWeb-Heavy.eot?#iefix') format('embedded-opentype'),
+        url('fonts/DrukWideWeb-Heavy/DrukWideWeb-Heavy.woff2') format('woff2'),
+        url('fonts/DrukWideWeb-Heavy/DrukWideWeb-Heavy.woff') format('woff'),
+        url('fonts/DrukWideWeb-Heavy/DrukWideWeb-Heavy.ttf') format('truetype'),
+        url('fonts/DrukWideWeb-Heavy/DrukWideWeb-Heavy.svg#DrukWideWeb-Heavy') format('svg');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+  font-family: "SctoGroteskARegular";
+  src: url("fonts/SctoGroteskARegular/SctoGroteskARegular.eot");
+  src: url("fonts/SctoGroteskARegular/SctoGroteskARegular.eot")
+      format("embedded-opentype"),
+    url("fonts/SctoGroteskARegular/SctoGroteskARegular.woff2")
+      format("woff2"),
+    url("fonts/SctoGroteskARegular/SctoGroteskARegular.woff")
+      format("woff"),
+    url("fonts/SctoGroteskARegular/SctoGroteskARegular.ttf")
+      format("truetype");
+}
+
+@font-face {
+    font-family: 'SctoGroteskABlack';
+    src: url('fonts/SctoGroteskABlack/SctoGroteskABlack.eot');
+    src: url('fonts/SctoGroteskABlack/SctoGroteskABlack.eot') format('embedded-opentype'),
+         url('fonts/SctoGroteskABlack/SctoGroteskABlack.woff2') format('woff2'),
+         url('fonts/SctoGroteskABlack/SctoGroteskABlack.woff') format('woff'),
+         url('fonts/SctoGroteskABlack/SctoGroteskABlack.ttf') format('truetype'),
+         url('fonts/SctoGroteskABlack/SctoGroteskABlack.svg#SctoGroteskABlack') format('svg');
+}
+
+a,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+  color: white;
+}
+
+.modal-open .container-fluid, 
+.modal-open  .container,
+.blurry{
+    -webkit-filter: blur(5px);
+}
+
+button:focus{
+    outline:none;
+}
+
+button.close{
+    color: #FFD10C;
+    font-size: 60px;
+    font-weight: 100;
+    font-family: -webkit-pictograph;
+}
+
+body {
+  background-color: black;
+  background-image: url("img/background-pattern.svg");
+  color: white;
+  font-family: "SctoGroteskARegular" !important;
+}
+
+.menu {
+    padding: 40px 0px 60px 0px;
+    width: 100%;
+}
+
+.menu-overlay{
+    position: absolute;
+    background: black;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    left: 0;
+}
+
+.navbar{
+    z-index: 2;
+}
+
+.navbar-toggle{
+    border: none;
+}
+
+.menu-desplegable {
+    display: contents;
+}
+
+.modal-content{
+    background-color: transparent;
+    border: none;
+}
+
+.modal-header{
+    border-bottom: none;   
+}
+
+.modal-body iframe{
+-webkit-box-shadow: 0px 0px 24px -2px rgba(255,255,255,0.32);
+-moz-box-shadow: 0px 0px 24px -2px rgba(255,255,255,0.32);
+box-shadow: 0px 0px 24px -2px rgba(255,255,255,0.32);
+}
+
+.logo path, 
+.logo polygon,
+.logo rect{
+    fill: #FFD10C;
+}
+
+.logo.blanco path, 
+.logo.blanco polygon,
+.logo.blanco rect{
+    fill: #FFFFFF;
+}
+
+@media (max-width: 767px) {
+    .menu-desplegable {
+        position: absolute;
+        width: 100%;
+        top: 85px;
+        font-size: 25px;
+        z-index: 20;
+        display: inline;
+    }
+    .logo path, 
+    .logo polygon, 
+    .logo rect,
+    .logo.blanco path, 
+    .logo.blanco polygon,
+    .logo.blanco rect{
+        fill: #FFD10C;
+    }
+}
+
+.amarillo a{
+    color: #FFD10C !important;
+}
+
+h3 {
+  font-family: "Druk Wide Web Italic";
+  font-style: italic;
+}
+
+
+.modal-dialog{
+    max-width: 100%;
+    width: 60%;
+    text-align: center;
+    margin: auto;
+    display: flex !important;
+    align-items: center;
+    height: 100vh;
+}
+
+@media (max-width: 767px) {
+    .modal-dialog{
+        width: 100%;
+    }
+}
+
+.video-player{
+    width: 100%;
+}
+
+#player, .player{
+    -webkit-box-shadow: 0px 0px 33px 1px rgba(255,255,255,1);
+    -moz-box-shadow: 0px 0px 33px 1px rgba(255,255,255,1);
+    box-shadow: 0px 0px 20px 1px rgba(255,255,255,.5);
+    margin: 50px;
+}
+
+.proyecto-img{
+    cursor: pointer;
+}
+
+.more-proyects-overlay{
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.more-projects-overlay{
+    border: dashed;
+}
+
+.titulo-proyecto{
+    font-family: "Druk Wide Web Heavy";
+    text-transform: uppercase;
+    font-style: normal;
+}
+
+.titulo-proyecto-modal{
+    font-family: "Druk Wide Web Heavy";
+    text-transform: uppercase;
+}
+
+.video-options .active{
+    font-family: 'SctoGroteskABlack';
+}
+
+.video-options span{
+    cursor: pointer;
+}
+
+.home-decoration{
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+}
+
+.home-carousel{
+    position: absolute;
+    z-index: -10;
+    height: 100vh;
+    width: 100vw;
+}
+
+.carousel-inner{
+  height: 100vh;  
+}
+
+.carousel-item{
+    height: 100vh; 
+    background-size: cover;
+    background-position: center center;
+}
+
+.carousel-caption{
+    width: 100%;
+    right: 0px;
+    left: 0px;
+    cursor: pointer;
+}
+
+.view-proyect-button{
+    border-width: 0px 1px 1px 0px;
+    border-style: solid;
+    border-color: white;
+    font-size: 20px;
+    display: inline-block;
+    padding: 10px;
+}
+
+.contact-decoration{
+    position: absolute;
+    left: -70px;
+    top: -70px;
+}
+
+.about-decoration{
+    padding-top: 150px;
+}
+
+.about-title{
+    left: -80px;
+    position: relative;
+}
+
+
+@media (max-width: 767px) {
+    .about-decoration{
+        padding-top: 50px;
+    }
+    .about-title{
+        left: 0px;
+    }
+}
