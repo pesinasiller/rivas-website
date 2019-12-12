@@ -29,7 +29,7 @@ export default class Contact extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     axios.post(
-      "https://formcarry.com/s/i-zCpD8qxTB",
+      "https://formcarry.com/s/CqcUr-qPu_y",
       this.state.formData,
       {headers: {"Accept": "application/json"}}
       )
