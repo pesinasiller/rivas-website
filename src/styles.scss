@@ -42,6 +42,11 @@
          url('fonts/SctoGroteskABlack/SctoGroteskABlack.svg#SctoGroteskABlack') format('svg');
 }
 
+::selection{
+  background-color: #FFD10C;
+  color: black;
+}
+
 a,
 a:visited,
 a:hover,
@@ -50,7 +55,7 @@ a:active {
   color: white;
 }
 
-.modal-open .container-fluid, 
+.modal-open .container-fluid,
 .modal-open  .container,
 .blurry{
     -webkit-filter: blur(5px);
@@ -60,8 +65,11 @@ button:focus{
     outline:none;
 }
 
-button.close{
+button.close,
+button.close:hover{
     color: #FFD10C;
+    opacity: 1;
+    text-shadow: none;
     font-size: 60px;
     font-weight: 100;
     font-family: -webkit-pictograph;
@@ -69,9 +77,15 @@ button.close{
 
 body {
   background-color: black;
-  background-image: url("img/background-pattern.svg");
   color: white;
   font-family: "SctoGroteskARegular" !important;
+}
+
+.background-pattern{
+  background-image: url("img/background-pattern.svg");
+  background-size: cover;
+  min-height: 100vh;
+  background-position: center;
 }
 
 .menu {
@@ -106,7 +120,7 @@ body {
 }
 
 .modal-header{
-    border-bottom: none;   
+    border-bottom: none;
 }
 
 .modal-body iframe{
@@ -115,13 +129,13 @@ body {
 box-shadow: 0px 0px 24px -2px rgba(255,255,255,0.32);
 }
 
-.logo path, 
+.logo path,
 .logo polygon,
 .logo rect{
     fill: #FFD10C;
 }
 
-.logo.blanco path, 
+.logo.blanco path,
 .logo.blanco polygon,
 .logo.blanco rect{
     fill: #FFFFFF;
@@ -136,10 +150,10 @@ box-shadow: 0px 0px 24px -2px rgba(255,255,255,0.32);
         z-index: 20;
         display: inline;
     }
-    .logo path, 
-    .logo polygon, 
+    .logo path,
+    .logo polygon,
     .logo rect,
-    .logo.blanco path, 
+    .logo.blanco path,
     .logo.blanco polygon,
     .logo.blanco rect{
         fill: #FFD10C;
@@ -232,11 +246,11 @@ h3 {
 }
 
 .carousel-inner{
-  height: 100vh;  
+  height: 100vh;
 }
 
 .carousel-item{
-    height: 100vh; 
+    height: 100vh;
     background-size: cover;
     background-position: center center;
 }
@@ -259,8 +273,7 @@ h3 {
 
 .contact-decoration{
     position: absolute;
-    left: -70px;
-    top: -70px;
+    top: -20px;
 }
 
 .about-decoration{
@@ -280,4 +293,37 @@ h3 {
     .about-title{
         left: 0px;
     }
+}
+
+button{
+  background: none;
+  border: none;
+  &:focus{
+      outline:none;
+  }
+}
+
+form.doctores-form{
+  div{
+    border-bottom: 1px solid white;
+    margin-bottom: 20px;
+    label{
+      margin: 0px;
+      padding-right: 15px;
+    }
+    input,
+    textarea{
+      background: none;
+      border: none;
+      padding: 0px;
+      color: white;
+    }
+    input:focus,
+    textarea:focus{
+      outline: none;
+    }
+    textarea{
+      resize: none;
+    }
+  }
 }

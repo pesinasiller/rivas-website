@@ -1,13 +1,11 @@
 import React, { Component } from 'react'
 import { Col, Navbar, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { HashLink } from 'react-router-hash-link';
-import { ReactComponent as Logo } from "../img/logo-blanco.svg";
+import { ReactComponent as Logo } from "../img/logo.svg";
 import { HamburgerSlider } from 'react-animated-burgers'
 
 export class Menu extends Component {
-    
-state = {
+  state = {
     isActive: false
   }
 
@@ -16,14 +14,14 @@ state = {
       isActive: !this.state.isActive
     })
   }
-  
+
   render(){
       const logoColor = this.props.logoWhite ? "blanco" : "";
       const textColor = this.props.textWhite ? "amarillo" : "";
-      return (   
+      return (
         <>
-        {this.state.isActive && this.props.background && <div className="menu-overlay"></div>}
-        <Navbar expand="md" className="px-0 py-4">
+          {this.state.isActive && this.props.background && <div className="menu-overlay"></div>}
+          <Navbar expand="md" className="px-0 py-4">
 
             <Col xs={6} md={2} className="p-0">
                 <Link to="/">
@@ -54,19 +52,19 @@ state = {
                 <Col xs={12} md={1}>
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ml-auto text-right">
-                            <HashLink to="/about#clients">Clients</HashLink>
-                        </Nav>       
+                            <Link to="/clients">Clients</Link>
+                        </Nav>
                     </Navbar.Collapse>
                 </Col>
                 <Col xs={12} md={1}>
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ml-auto text-right">
-                            <HashLink to="/about#contact">Contact</HashLink>
+                            <Link to="/contact">Contact</Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Col>
             </div>
-        </Navbar>
+          </Navbar>
         </>
       )
   }

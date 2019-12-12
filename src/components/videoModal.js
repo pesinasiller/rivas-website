@@ -1,11 +1,10 @@
 import React from "react";
 import { Row, Col, Modal } from "react-bootstrap";
-import "../styles.css";
 
 export class VideoModal extends React.Component {
  constructor(props, context) {
     super(props, context);
-        
+
     this.state = {
       videoOption: "trailer"
     };
@@ -22,8 +21,8 @@ export class VideoModal extends React.Component {
                     <iframe src={videoLink}
                         title="video-iframe"
                         style={{position: "absolute", top: "0", left: "0", width: "100%", height: "100%"}}
-                        frameBorder="0" 
-                        allow="autoplay; fullscreen" 
+                        frameBorder="0"
+                        allow="autoplay; fullscreen"
                         allowFullScreen />
                 </div>
                 <script src="https://player.vimeo.com/api/player.js"></script>
@@ -34,14 +33,14 @@ export class VideoModal extends React.Component {
                         </h4>
                     </Col>
                     <Col xs={12} md={6} className="text-left text-md-right video-options">
-                        <span 
-                        onClick={() => this.setState({ videoOption: "trailer" })} 
+                        <span
+                        onClick={() => this.setState({ videoOption: "trailer" })}
                         className={this.state.videoOption === "trailer" ? "active" : ""}>TRAILER</span>
 
                         <span className="px-2">|</span>
 
-                        <span 
-                        onClick={() => this.setState({ videoOption: "tvSpot" })} 
+                        <span
+                        onClick={() => this.setState({ videoOption: "tvSpot" })}
                         className={this.state.videoOption === "tvSpot" ? "active" : ""}>TV SPOT</span>
 
                     </Col>
@@ -51,4 +50,3 @@ export class VideoModal extends React.Component {
     );
   }
 }
-

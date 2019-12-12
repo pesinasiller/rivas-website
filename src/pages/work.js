@@ -4,12 +4,11 @@ import { Menu } from "../components/menu";
 import { VideoModal } from "../components/videoModal";
 import { client, urlForImage } from "../components/sanityClient";
 import moreProyectsOverlay from "../img/more_projects_overlay.png";
-import "../styles.css";
 
 export class Work extends React.Component {
  constructor(props, context) {
     super(props, context);
-     
+
     this.fetchProjects = this.fetchProjects.bind(this);
     this.moreProjects = this.moreProjects.bind(this);
     this.handleShow = this.handleShow.bind(this);
@@ -26,13 +25,12 @@ export class Work extends React.Component {
   componentDidMount() {
     this.fetchProjects()
   }
-    
+
   fetchProjects(){
     client
       .fetch(
-        //`*[_type == $type][ 0..${ this.state.page } ] | order(publishedAt desc)`, // Query
-        `*[_type == $type] | order(publishedAt desc)`, // Query
-        { type: "proyecto" } // Params (optional)
+        `*[_type == $type] | order(publishedAt desc)`,
+        { type: "proyectos" }
       )
       .then(res => {
         this.setState({ proyects: res });
@@ -41,25 +39,26 @@ export class Work extends React.Component {
         console.error("Oh no, error occured: ", err);
       });
   }
-    
+
   moreProjects(){
       this.setState({ page: this.state.page + 2 })
   }
-    
+
   handleClose() {
     this.setState({ show: false, proyecto: {} });
   }
 
   handleShow(item) {
+      console.log(item)
     this.setState({ show: true, proyecto: item });
   }
   render() {
     const loadedProjects = this.state.proyects.slice( 0, this.state.page )
     const numberOfProyects = loadedProjects.length;
     const allLoaded = this.state.proyects.length < this.state.page ? true : false
-    const proyectElements = loadedProjects.map((item, key) => 
-        <React.Fragment key={key}>                                            
-        <Col xs={6} md={2} className="py-2" onClick={ (numberOfProyects === key + 1 ) ? null : () => this.handleShow(item) }> 
+    const proyectElements = loadedProjects.map((item, key) =>
+        <React.Fragment key={key}>
+        <Col xs={6} md={2} className="py-2" onClick={ () => this.handleShow(item) }>
             <img
               className="img-fluid proyecto-img"
               alt={item.titulo}
@@ -81,17 +80,19 @@ export class Work extends React.Component {
           }
         </React.Fragment>);
     return (
-      <Container>
-        <Menu textWhite={true} background={true} />
-        <Row className="py-5">
-            {proyectElements}
-        </Row>
+      <div className="background-pattern">
+          <Container>
+            <Menu textWhite={true} background={true} />
+            <Row className="py-5">
+                {proyectElements}
+            </Row>
 
-        <VideoModal 
-            show={this.state.show} 
-            handleClose={this.handleClose}
-            proyecto={this.state.proyecto} />
-      </Container>
+            <VideoModal
+                show={this.state.show}
+                handleClose={this.handleClose}
+                proyecto={this.state.proyecto} />
+          </Container>
+      </div>
     );
   }
 }
